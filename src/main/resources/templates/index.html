@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Teste Ajax</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="./js/app.js"></script>
+
+<link href="./bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="indexController">
+
+	<form class="form-inline">
+		<div class="form-group">
+			<label for="exampleInputName2">Name</label> <input type="text" ng-model="nomeAluno"
+				class="form-control" id="exampleInputName2" placeholder="Jane Doe" />
+		</div>
+
+		<button ng-click="addAluno()" class="btn btn-default">Send invitation</button>
+	</form>
+
+	<table class="table table-striped">
+		<tr>
+			<th>ID</th>
+			<th>NOME</th>
+		</tr>
+		<tr ng-repeat="x in alunos">
+			<td>{{x.id}}</td>
+			<td>{{x.nome}}</td>
+		</tr>
+	</table>
+</body>
+</html>
